@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="formulario.js" cache="false"></script>
+</head>
+<body>
+    <h1>Formulario</h1>
+   
+    <div class="cuadroEjercicios">
+    <h2>Usuario:</h2>
+    <div>
+        
+        <form id="formulario">
+            <div>
+                <label for="nombre">NOMBRE</label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error"></div>
+            </div>
+            <div>
+                <div>
+                    <label for="apellidos">APELLIDOS</label>
+                    <input id="apellidos"/>
+                    <div id="erroresApellidos" class="error"> </div>
+                </div>
+                <div>
+                    <label for="edad">EDAD</label>
+                    <input id="edad"/>
+                    <div id="erroresEdad" class="error"> </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="profesion">PROFESION</label>
+                        <select id="profesion">
+                            <option value="">NINGUNO</option>
+                            <option value="profesor">Profesor</option>
+                            <option value="limpiador">Limpiador</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="recepcionista">Recepcionista</option>
+                        </select>
+                        <div id="erroresProfesion" class="error">
+                            
+                        </div>
+                    </div>
+                    <br><br>
+                    <div>
+                        <label for="cookies"></label>
+                        <input type="checkbox" id="cookies" name="cookies" value="true"> 
+                        ¿Aceptar Política de Cookies?
+                        <div id="erroresCookies" class="error"></div>
+                    </div>
+                    <br>
+            
+                    <input type="submit" value="Enviar" id="formulario">
+        </form>
+                <div id="nombre"></div>
+                <div id="apellidos"></div>
+                <div id="edad"></div>
+                <div id="profesion"></div>
+        
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
