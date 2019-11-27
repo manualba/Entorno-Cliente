@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="scripts/ejercicio.js" defer> </script>
+    <link rel="stylesheet" href="css/jquery.css" />
+    <title></title>
+</head>
+<body>
+<fieldset><legend><h1>PROYECTO</h1></legend>
+<form action="www.google.es" onsubmit="return validarFormulario();">
+    <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"/>
+    </div>
+
+    <div class="campo">
+        <label for="tiempo">Tiempo</label>
+        <input type="text" id="tiempo" onchange="esTiempoCorrecto()" />
+    </div>
+
+
+    <div class="campo">
+        <label for="tipo">Tipo</label>
+        <select id="tipo" onchange="esTipoCorrecto()">
+            <option value="">NINGUNO</option>
+            <option value="redes">Redes</option>
+            <option value="desarrollo">Desarrollo</option>
+            <option value="analisis">Analisis</option>
+            <option value="refactor">Refactor</option>
+        </select>
+    </div>
+    <br><br>
+    <div class="campo">
+            <label for="beneficios">Beneficios<br>
+            <input type="radio" id="beneficios" name="b" onchange="esBeneficiosCorrecto()"/>
+            Corto plazo
+            <br>
+            <input type="radio" id="beneficios" name="b" onchange="esBeneficiosCorrecto()"/>
+            Largo plazo
+        </label>
+    </div>
+    <br><br>
+    <div class="campo">
+            <label for="personal">Personal<br>
+            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Programador
+            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Analista
+            <br>
+            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Jefe de proyecto
+        </label>
+    </div>
+    <br><br>
+    <div >
+        <input type="submit"  id="submit">
+    </div>
+</form>
+</fieldset>
+
+
+</body>
+</html>
