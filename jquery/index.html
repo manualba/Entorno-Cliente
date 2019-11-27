@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
-    <script src="scripts/ejercicio.js" defer> </script>
+    <script src="scripts/ejercicios.js" defer> </script>
     <link rel="stylesheet" href="css/jquery.css" />
     <title></title>
 </head>
@@ -17,13 +17,13 @@
 
     <div class="campo">
         <label for="tiempo">Tiempo</label>
-        <input type="text" id="tiempo" onchange="esTiempoCorrecto()" />
+        <input type="text" id="tiempo"/>
     </div>
 
 
     <div class="campo">
         <label for="tipo">Tipo</label>
-        <select id="tipo" onchange="esTipoCorrecto()">
+        <select id="tipo">
             <option value="">NINGUNO</option>
             <option value="redes">Redes</option>
             <option value="desarrollo">Desarrollo</option>
@@ -34,20 +34,20 @@
     <br><br>
     <div class="campo">
             <label for="beneficios">Beneficios<br>
-            <input type="radio" id="beneficios" name="b" onchange="esBeneficiosCorrecto()"/>
+            <input type="radio" id="beneficios" name="b"/>
             Corto plazo
             <br>
-            <input type="radio" id="beneficios" name="b" onchange="esBeneficiosCorrecto()"/>
+            <input type="radio" id="beneficios" name="b"/>
             Largo plazo
         </label>
     </div>
     <br><br>
     <div class="campo">
             <label for="personal">Personal<br>
-            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Programador
-            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Analista
+            <input type="checkbox" id="personal" name="p"/>Programador
+            <input type="checkbox" id="personal" name="p"/>Analista
             <br>
-            <input type="checkbox" id="personal" name="p" onclick="esPersonalCorrecto()"/>Jefe de proyecto
+            <input type="checkbox" id="personal" name="p"/>Jefe de proyecto
         </label>
     </div>
     <br><br>
