@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded",function(){
     let inputApellidos = document.getElementById("apellidos");
     inputApellidos.addEventListener("keyup",validarApellidos);
 
+    let inputGmail = document.getElementById("gmail");
+    inputGmail.addEventListener("keyup",validarGmail);
+
     let inputEdad = document.getElementById("edad");
     inputEdad.addEventListener("keyup",validarEdad);
 
@@ -36,14 +39,14 @@ function validarNombre(){
     if(!/^[a-z A-Z]+$/.test(valor)){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Solo se permiten letras";
+        divError.innerHTML = "MAH dice: Solo se permiten letras";
         listaErrores.appendChild(divError);
     }
 
     if(valor.length < 3){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Tu nombre debe de tener al menos 3 letras";
+        divError.innerHTML = "MAH dice: Tu nombre debe de tener al menos 3 letras";
         listaErrores.appendChild(divError);
     }
 
@@ -72,21 +75,21 @@ function validarApellidos(){
     if(!/^[a-z A-Z]+$/.test(valor)){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Solo se permiten letras";
+        divError.innerHTML = "MAH dice: Solo se permiten letras";
         listaErrores.appendChild(divError);
     }
 
     if(valor.length < 3){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Tus apellidos deben de tener al menos 3 letras";
+        divError.innerHTML = "MAH dice: Tus apellidos deben de tener al menos 3 letras";
         listaErrores.appendChild(divError);
     }
 
     if(valor==valorNombre){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Tu apellido no puede ser igual que tu nombre";
+        divError.innerHTML = "MAH dice: Tu apellido no puede ser igual que tu nombre";
         listaErrores.appendChild(divError);
     }
 
@@ -98,6 +101,57 @@ function validarApellidos(){
 
     return esCorrecto;
 
+}
+
+//Gmail
+
+function validarGmail(){
+    let esCorrecto = true;
+    let inputGmail = document.getElementById("gmail");
+    let valor = inputGmail.value.trim();
+    let listaErrores = document.getElementById("erroresGmail");
+    listaErrores.innerHTML = "";
+    inputGmail.classList.remove("inputErroneo");
+    inputGmail.classList.remove("inputCorrecto");
+
+    if (valor.toLocaleLowerCase().includes('manuel') ||
+        valor.toLocaleLowerCase().includes('alba') ||
+        valor.toLocaleLowerCase().includes('hornillo')) {
+            esCorrecto = false;
+            let divError = document.createElement("div");
+            divError.innerHTML = "MAH dice: No puede contener las palabras Manuel, Alba u Hornillo";
+            listaErrores.appendChild(divError);
+    }
+
+    if (!valor.match(/^[a-zA-Z0-9]+/g)) {
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "MAH dice: Tu Gmail debe empezar por una letra o número";
+        listaErrores.appendChild(divError);
+    }
+
+    if (!valor.endsWith("mah.com")){
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "MAH dice: tu gmail debe terminar con mah.com";
+        listaErrores.appendChild(divError);
+    }
+
+    if (!valor.includes("@")){
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "MAH dice: tu gmail debe tener un \"@\"";
+        listaErrores.appendChild(divError);
+    }
+
+    if (esCorrecto){
+        inputGmail.classList.add("inputCorrecto");
+    }else{
+        inputGmail.classList.add("inputErroneo");
+    }
+
+    return esCorrecto;
+    
 }
 
 //Edad
@@ -114,14 +168,14 @@ function validarEdad(){
     if(!/^[0-9]+$/.test(valor)){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Solo numeros";
+        divError.innerHTML = "MAH dice: Solo numeros";
         listaErrores.appendChild(divError);
     }
 
     if(valor < 18){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Tiene que ser mayor de 18";
+        divError.innerHTML = "MAH dice: Tiene que ser mayor de 18";
         listaErrores.appendChild(divError);
     }
 
@@ -149,7 +203,7 @@ function validarProfesion(){
     if (select.value === "") {
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-No puedes seleccionar NINGUNO como profesion";
+        divError.innerHTML = "MAH dice: No puedes seleccionar NINGUNO como profesion";
         listaErrores.appendChild(divError);
     }
 
@@ -179,7 +233,7 @@ function validarCheckbox(){
 
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "-Acepta las cookies!!";
+        divError.innerHTML = "MAH dice: Acepta las cookies!!";
         listaErrores.appendChild(divError);
     }
 
@@ -223,11 +277,11 @@ function validarFormulario(event) {
         lista.profesion = profesion;
         listaUsuarios.push(lista)
 
-        alert("El usuario se registro correctamente!");
+        alert("MAH dice: El usuario se registro correctamente!");
         console.log(listaUsuarios);
   
     } else {
-        alert("Tienes errores en el formulario!");
+        alert("MAH dice: Tienes errores en el formulario!");
     }
     
 }
