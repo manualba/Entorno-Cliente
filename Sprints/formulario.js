@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded",function(){
     let inputGmail = document.getElementById("gmail");
     inputGmail.addEventListener("keyup",validarGmail);
 
-    let inputEdad = document.getElementById("edad");
-    inputEdad.addEventListener("keyup",validarEdad);
+    let inputPass = document.getElementById("pass");
+    inputPass.addEventListener("keyup",validarPass);
 
     let formulario = document.getElementById("formulario");
     formulario.addEventListener("submit", validarFormulario);
@@ -37,7 +37,7 @@ function validarNombre(){
     if(valor.length < 3){
         esCorrecto = false;
         let divError = document.createElement("div");
-        divError.innerHTML = "u nombre debe de tener al menos 3 letras";
+        divError.innerHTML = "Tu nombre debe de tener al menos 3 letras";
         listaErrores.appendChild(divError);
     }
 
@@ -52,7 +52,7 @@ function validarNombre(){
 }
 
 // Contraseña
-function esValidaPassword() {
+function validarPass() {
   
   	let esCorrecto = true;
     let inputPass = document.getElementById("pass");
@@ -68,20 +68,20 @@ function esValidaPassword() {
         divError.innerHTML = "Tu password debe de tener minimo 6 caracteres";
         listaErrores.appendChild(divError);
     }
-/*
-    if (!valor.includes(/(.*[A-Z]+.*){1,}/)){ // 1 mayuscula
+
+    if (!/(.*[A-Z]+.*){1,}/.test(valor)){ // 1 mayuscula
         esCorrecto = false;
         let divError = document.createElement("div");
         divError.innerHTML = "Tu password debe tener una mayuscula";
         listaErrores.appendChild(divError);
     }
 
-    if (!valor.includes(/(.*[\!\?\-\$\_]+.*){1,}/)){ // 1 caracter especial
+    if (!/(.*[\!\?\-\$\_]+.*){1,}/.test(valor)){ // 1 caracter especial
         esCorrecto = false;
         let divError = document.createElement("div");
         divError.innerHTML = "Tu password debe tener un caracter especial";
         listaErrores.appendChild(divError);
-    }*/
+    }
 
     if (esCorrecto){
         inputPass.classList.add("inputCorrecto");
@@ -136,40 +136,6 @@ function validarGmail(){
     
 }
 
-//Edad
-function validarEdad(){
-    let esCorrecto = true;
-    let inputEdad = document.getElementById("edad");
-    let valor = inputEdad.value.trim();
-    let listaErrores = document.getElementById("erroresEdad");
-    listaErrores.innerHTML = "";
-    inputEdad.classList.remove("inputErroneo");
-    inputEdad.classList.remove("inputCorrecto");
-
-  
-    if(!/^[0-9]+$/.test(valor)){
-        esCorrecto = false;
-        let divError = document.createElement("div");
-        divError.innerHTML = "Solo numeros";
-        listaErrores.appendChild(divError);
-    }
-
-    if(valor < 18){
-        esCorrecto = false;
-        let divError = document.createElement("div");
-        divError.innerHTML = "Tiene que ser mayor de 18";
-        listaErrores.appendChild(divError);
-    }
-
-    if(esCorrecto){
-        inputEdad.classList.add("inputCorrecto");
-    }else{
-        inputEdad.classList.add("inputErroneo");
-    }
-
-    return esCorrecto;
-
-}
 
 
 
@@ -181,9 +147,9 @@ function validarFormulario(event) {
     let esCorrectoNombre = validarNombre();
     let esCorrectoGmail = validarGmail();
     let esCorrectoPass = validarPass();
-    let esCorrectoEdad = validarEdad();
+
     
-    if (esCorrectoNombre && esCorrectoEdad && esCorrectoGmail) {
+    if (esCorrectoNombre &&  esCorrectoGmail && esCorrectoPass) {
         esFormularioCorrecto = true;
     }
 
@@ -193,11 +159,10 @@ function validarFormulario(event) {
         let nombre = document.getElementById("nombre").value.trim();
         let gmail = document.getElementById("gmail").value.trim();
         let pass = document.getElementById("pass").value.trim();
-        let edad = document.getElementById("edad").value.trim();
 
         lista.nombre = nombre;
-      	lista.gmail = gmail;
-        lista.edad = edad;
+        lista.gmail = gmail;
+        lista.pass = pass;
         listaUsuarios.push(lista)
 
         alert("El usuario se registro correctamente!");

@@ -2,37 +2,34 @@
 <html>
 <head lang="es_ES">
     <meta charset="UTF-8">
-    <title>Formulario</title>
+    <title>Login</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="formulario.js" cache="false"></script>
 </head>
-<body>
-    <h1>Formulario</h1>
-   
+<body style="text-align: center;">
+    <h1>LOGIN</h1>
+    <hr>
     <div class="cuadroEjercicios">
-    <h2>Usuario:</h2>
+    <h2 style="text-decoration: underline silver;">Usuario:</h2>
     <div>
         
         <form id="formulario">
             <div>
-                <label for="nombre">NOMBRE</label>
+                <label for="nombre">Nombre: </label>
                 <input id="nombre"/>
                 <div id="erroresNombre" class="error"></div>
             </div>
+            <br>
             <div>
-                <label for="gmail">GMAIL</label>
+                <label for="gmail">Email: </label>
                 <input id="gmail"/>
                 <div id="erroresGmail" class="error"> </div>
             </div>
+            <br>
             <div>
+            
                 <div>
-                    <label for="edad">EDAD</label>
-                    <input id="edad"/>
-                    <div id="erroresEdad" class="error"> </div>
-                </div>
-
-                <div>
-                    <label for="pass">CONTRASEÑA</label>
+                    <label for="pass">Contraseña: </label>
                     <input id="pass" type="password" > 
                     <div id="erroresPass" class="error"> </div>
                 </div>
@@ -44,7 +41,6 @@
         </form>
                 <div id="nombre"></div>
                 <div id="gmail"></div>
-                <div id="edad"></div>
                 <div id="pass"></div>
 
             </div>
