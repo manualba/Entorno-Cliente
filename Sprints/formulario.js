@@ -151,6 +151,9 @@ function validarFormulario(event) {
     
     if (esCorrectoNombre &&  esCorrectoGmail && esCorrectoPass) {
         esFormularioCorrecto = true;
+
+        return document.getElementById("ver").classList.remove("inactivo");
+
     }
 
     if (esFormularioCorrecto) {
