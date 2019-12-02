@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="formulario.js" cache="false"></script>
+</head>
+<body>
+    <h1>Formulario</h1>
+   
+    <div class="cuadroEjercicios">
+    <h2>Usuario:</h2>
+    <div>
+        
+        <form id="formulario">
+            <div>
+                <label for="nombre">NOMBRE</label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error"></div>
+            </div>
+            <div>
+                <label for="gmail">GMAIL</label>
+                <input id="gmail"/>
+                <div id="erroresGmail" class="error"> </div>
+            </div>
+            <div>
+                <div>
+                    <label for="edad">EDAD</label>
+                    <input id="edad"/>
+                    <div id="erroresEdad" class="error"> </div>
+                </div>
+
+                <div>
+                    <label for="pass">CONTRASEÑA</label>
+                    <input id="pass" type="password" > 
+                    <div id="erroresPass" class="error"> </div>
+                </div>
+                <div>
+                   
+                    <br><br>
+
+                    <input type="submit" value="Enviar" id="formulario">
+        </form>
+                <div id="nombre"></div>
+                <div id="gmail"></div>
+                <div id="edad"></div>
+                <div id="pass"></div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
