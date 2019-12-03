@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="formulario.js" cache="false"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">MÉTODO DE PAGO</h1>
+    <hr>
+    <div class="pagos">
+    <h2 style="text-decoration: underline silver;">Usuario:</h2>
+    <div>
+        
+
+            <form id="formulario">
+            <div>
+                <label for="nombre">Nombre usuario: </label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error"></div>
+            </div>
+            <br>
+            <div>
+                <label for="gmail">Email: </label>
+                <input id="gmail"/>
+                <div id="erroresGmail" class="error"> </div>
+            </div>
+            <br>
+            <div>
+            
+                <div>
+                    <label for="pass">Contraseña: </label>
+                    <input id="pass" type="password" > 
+                    <div id="erroresPass" class="error"> </div>
+                </div>
+                <div>
+                   
+                    <br>
+                    <hr>
+                    <h2 style="text-decoration: underline silver;">Datos bancarios:</h2>
+
+                    <div>
+                        <label for="nomProp">Nombre propietario de la tarjeta: </label>
+                        <input id="nomProp"/>
+                        <div id="erroresNomProp" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="numT">Número de tarjeta: </label>
+                        <input id="numT"/>
+                        <div id="erroresNumT" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="cvv">CVV: </label>
+                        <input id="cvv"  size="3" />
+                        <div id="erroresCvv" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label type="month" for="fechaV">Fecha vencimiento:</label>
+                        <input id="fechaV" type="month"/>
+                        <div id="erroresFechaV" class="error"></div>
+                    </div>
+                 
+                    <hr>
+
+
+                    <input type="submit" value="Enviar" id="formulario">
+               
+        </form>
+        
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
