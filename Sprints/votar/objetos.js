@@ -1,10 +1,7 @@
-class Animal{
-    constructor(id,nombre,especie,raza,vida){
+class Compania{
+    constructor(id,nombre){
         this.id = id;//Para identificarlo de forma única
         this.nombre = nombre;
-        this.especie = especie;
-        this.raza = raza;
-        this.vida = vida;
         this.propietario = null;
         this.votos = [];
     }
@@ -23,30 +20,6 @@ class Animal{
 
     set nombre(nombre){
         this._nombre = nombre; 
-    }
-
-    get especie(){
-        return this._especie;
-    }
-
-    set especie(especie){
-        this._especie = especie; 
-    }
-
-    get raza(){
-        return this._raza;
-    }
-
-    set raza(raza){
-        this._raza = raza; 
-    }
-
-    get vida(){
-        return this._vida;
-    }
-
-    set vida(vida){
-        this._vida = vida; 
     }
 
     get persona(){
@@ -178,38 +151,48 @@ let listaTodosLosVotos = [];
 
 let Pepito = new Persona(1,"Pepito",18);
 let Juanito = new Persona(2,"Juanito",23);
+let Jaimito = new Persona(3,"Jaimito",35);
+let Charlie = new Persona(4,"Charlie",44);
 
 let listaUsuarios = [];
 listaUsuarios.push(Pepito);
 listaUsuarios.push(Juanito);
+listaUsuarios.push(Jaimito);
+listaUsuarios.push(Charlie);
 
-let thor = new Animal(1,"Thor","Perro","Caniche",5);
-let capitanAmerica = new Animal(2,"Capitan America","Gato","Siames",8);
-let viudaNegra = new Animal(3,"Viuda Negra","Perro","BullDog",15);
-let Hulk = new Animal(4,"Hulk","Perro","Pastor Aleman",12);
-let OjoHalcon = new Animal(5,"Ojo de Halcón","Perro","San Bernando",9);
-let Loky = new Animal(6,"Loky","Perro","Salchicha",4);
-let IronMan = new Animal(8,"Iron Man","Conejo","Común",9);
-let WarMachine = new Animal(9,"War Machine","Perro","Ratón de Praga",20);
-let Vision = new Animal(10,"Vision","Perro","Pastor Belga",12);
-let Mercurio = new Animal(11,"Mercurio","Pajaro","Loro",15);
-let listaAnimales = [];
+let Iberia = new Compania(1,"Iberia");
+let Vueling = new Compania(2,"Vueling");
+let TravelingExplorer = new Compania(3,"Traveling Explorer");
+let Viajeselcorteingles = new Compania(4,"Viajes el Corte-ingles");
+let AirFrance = new Compania(5,"Air France");
+let Avianca = new Compania(6,"Avianca");
+let Condor = new Compania(8,"Condor");
+let RoyalAirMaroc = new Compania(9,"Royal Air Maroc");
 
-listaAnimales.push(thor);
-listaAnimales.push(capitanAmerica);
-listaAnimales.push(viudaNegra);
-listaAnimales.push(Hulk);
-listaAnimales.push(OjoHalcon);
-listaAnimales.push(Loky);
-listaAnimales.push(IronMan);
-listaAnimales.push(WarMachine);
-listaAnimales.push(Vision);
-listaAnimales.push(Mercurio);
+let listaCompanias = [];
 
-crearVoto(Pepito,thor,true,"Muy bonito");
-crearVoto(Pepito,capitanAmerica,true,"Muy mono");
-crearVoto(Pepito,viudaNegra,false,"Muy Arisca");
+listaCompanias.push(Iberia);
+listaCompanias.push(Vueling);
+listaCompanias.push(TravelingExplorer);
+listaCompanias.push(Viajeselcorteingles);
+listaCompanias.push(AirFrance);
+listaCompanias.push(Avianca);
+listaCompanias.push(Condor);
+listaCompanias.push(RoyalAirMaroc);
 
-crearVoto(Juanito,OjoHalcon,true,"Muy bonito");
-crearVoto(Juanito,Loky,true,"Muy mono");
-crearVoto(Juanito,IronMan,false,"Muy Arisca");
+
+crearVoto(Pepito,Iberia,true);
+crearVoto(Pepito,Vueling,true);
+crearVoto(Pepito,TravelingExplorer,false);
+
+crearVoto(Juanito,AirFrance,true);
+crearVoto(Juanito,Avianca,true);
+crearVoto(Juanito,Condor,false);
+
+crearVoto(Jaimito,Condor,true);
+crearVoto(Jaimito,TravelingExplorer,true);
+crearVoto(Jaimito,AirFrance,false);
+
+crearVoto(Charlie,TravelingExplorer,true);
+crearVoto(Charlie,Vueling,true);
+crearVoto(Charlie,RoyalAirMaroc,false);
