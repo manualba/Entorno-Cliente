@@ -1,6 +1,6 @@
 class Compania{
     constructor(id,nombre){
-        this.id = id;//Para identificarlo de forma única
+        this.id = id;
         this.nombre = nombre;
         this.propietario = null;
         this.votos = [];
@@ -90,10 +90,10 @@ class Persona{
 }
 
 class Voto{
-    constructor(id,persona,animal,puntuacion,observaciones){
+    constructor(id,persona,compania,puntuacion,observaciones){
         this.id = id;
         this.persona = persona;
-        this.animal = animal;
+        this.compania = compania;
         this.puntuacion = puntuacion;
         this.observaciones = observaciones;
     }
@@ -114,12 +114,12 @@ class Voto{
         this._persona = persona; 
     }
 
-    get animal(){
-        return this._animal;
+    get compania(){
+        return this._compania;
     }
 
-    set animal(animal){
-        this._animal = animal; 
+    set compania(compania){
+        this._compania = compania; 
     }
 
     get puntuacion(){
@@ -139,11 +139,11 @@ class Voto{
     }
 }
 
-function crearVoto(persona,animal,puntuacion,observaciones){
+function crearVoto(persona,compania,puntuacion,observaciones){
     let idVoto = listaTodosLosVotos.length +1;
-    let voto = new Voto(idVoto,persona,animal,puntuacion,observaciones);
+    let voto = new Voto(idVoto,persona,compania,puntuacion,observaciones);
     persona.addVoto(voto);
-    animal.addVoto(voto);
+    compania.addVoto(voto);
     listaTodosLosVotos.push(voto);
 }
 
