@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>EJEMPLO DE VOTOS</title>
+    <script src="objetos.js" cache="false"></script>
+    <script src="usuarios.js" cache="false"></script>
+</head>
+<body>
+<div>
+    <h1 style="text-align: center;">VOTACIONES DE COMPAÑIAS</h1>
+    <div>
+        <hr>
+    <h2>Usuario:</h2>
+        <select id="selectUsuario" >
+            <option value=""></option>
+        </select>
+        <button id="botonRecargar">RECARGAR</button>
+    </div>
+    <div>
+        <h3>Compañias votadas de: <span id="nombre_usuario"></span></h3>
+        <ul id="animales_votados" >
+            
+        </ul>
+    </div>
+</div>
+<br>
+<hr>
+<div>
+    <h2>Votaciones</h2>
+    <form id="formularioVotar">
+    <div>
+        <span>Selecciona usuario: </span>    
+        <select id="selectUsuarioVotar" >
+            <option value=""></option>
+        </select>
+    </div>
+    <br>
+        <span>Compañia a votar:</span>
+        <select id="selectAnimalVotar" >
+            <option value=""></option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <span>¿Te gusta esta compañia?:</span><br>
+        <input id="gusta" type="radio" name="puntuacion" value="1" />
+        <label>Si</label>
+        <input id="no_gusta" type="radio" name="puntuacion" value="0" />
+        <label>No</label>
+    </div>
+    <br>
+    <div>
+        <label for="observaciones">Comentarios</label>
+        <textarea id="observaciones" name="observaciones">
+
+        </textarea>
+    </div>
+    <input type="submit" value="votar">
+</div>
+
+</body>
+</html>
