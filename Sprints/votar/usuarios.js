@@ -65,7 +65,7 @@ function validarAnimal(){
     let animalAVotar = listaCompanias.find( animal => animal.id === parseInt(idAnimalVotar));
     let haVotado = usuarioAVotar.votos.some( voto => voto.animal.id === parseInt(idAnimalVotar) );
     if(haVotado){
-        alert(`EL USUARIO ${usuarioAVotar.nombre} YA HA VOTADO AL ANIMAL ${animalAVotar.nombre}`)
+        alert(`EL USUARIO ${usuarioAVotar.nombre} YA HA VOTADO A LA COMPAÑIA: ${animalAVotar.nombre}`)
     }
     return esCorrecto;
 }
