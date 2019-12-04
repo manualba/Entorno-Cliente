@@ -1,7 +1,44 @@
-let listaUsuarios = [];
+$(function(){
+    $("#nombre").keyup(validarNombre);
+    $("#email").keyup(validarEmail);
+    $("#pass").keyup(validarPass);
+    $("#nomProp").keyup(validarNomProp);
+    $("#numT").keyup(validarNumT);
+    $("#cvv").keyup(validarCvv);
+    $("#fechaV").keyup(validarDuracion);
+    $("#formulario").submit(function(event){
+        event.preventDefault();
+        validarFormulario();
+    })
+})
 
-//Usuario
-$(() => $("#nombre").keyup(() => { 
+function validarDuracion(){
+    let esCorrecto = true;
+    let inputFechaV = document.getElementById("fechaV");
+    let valor = inputFechaV.value.trim();
+    let listaErrores = document.getElementById("erroresFechaV");
+    listaErrores.innerHTML = "";
+    inputFechaV.classList.remove("inputErroneo");
+    inputFechaV.classList.remove("inputCorrecto");
+
+    if(valor === ""){
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "Solo se permiten numeros";
+        listaErrores.appendChild(divError);
+    }
+
+
+    if(esCorrecto){
+        inputFechaV.classList.add("inputCorrecto");
+    }else{
+        inputFechaV.classList.add("inputErroneo");
+    }
+
+    return esCorrecto;
+}
+
+function validarNombre(){
     let esCorrecto = true;
     let inputNombre = document.getElementById("nombre");
     let valor = inputNombre.value.trim();
@@ -31,51 +68,9 @@ $(() => $("#nombre").keyup(() => {
     }
 
     return esCorrecto;
-}));
+}
 
-//Password
-$(() => $("#pass").keyup(() => { 
-    let esCorrecto = true;
-    let inputPass = document.getElementById("pass");
-    let valor = inputPass.value.trim();
-    let listaErrores = document.getElementById("erroresPass");
-    listaErrores.innerHTML = "";
-    inputPass.classList.remove("inputErroneo");
-    inputPass.classList.remove("inputCorrecto");
-
-    if (!/(.*[a-zA-Z0-9]+.*){6,}/.test(valor)) { // 6 caracteres 
-        esCorrecto = false;
-        let divError = document.createElement("div");
-        divError.innerHTML = "Tu password debe de tener minimo 6 caracteres";
-        listaErrores.appendChild(divError);
-    }
-
-    if (!/(.*[A-Z]+.*){1,}/.test(valor)){ // 1 mayuscula
-        esCorrecto = false;
-        let divError = document.createElement("div");
-        divError.innerHTML = "Tu password debe tener una mayuscula";
-        listaErrores.appendChild(divError);
-    }
-
-    if (!/(.*[\!\?\-\$\_]+.*){1,}/.test(valor)){ // 1 caracter especial
-        esCorrecto = false;
-        let divError = document.createElement("div");
-        divError.innerHTML = "Tu password debe tener un caracter especial";
-        listaErrores.appendChild(divError);
-    }
-
-    if (esCorrecto){
-        inputPass.classList.add("inputCorrecto");
-    }else{
-        inputPass.classList.add("inputErroneo");
-    }
-
-    return esCorrecto;
-
-}));
-
-//Email
-$(() => $("#email").keyup(() => { 
+function validarEmail(){
     let esCorrecto = true;
     let inputEmail = document.getElementById("email");
     let valor = inputEmail.value.trim();
@@ -113,11 +108,48 @@ $(() => $("#email").keyup(() => {
     }
 
     return esCorrecto;
+}
 
-}));
+function validarPass(){
+    let esCorrecto = true;
+    let inputPass = document.getElementById("pass");
+    let valor = inputPass.value.trim();
+    let listaErrores = document.getElementById("erroresPass");
+    listaErrores.innerHTML = "";
+    inputPass.classList.remove("inputErroneo");
+    inputPass.classList.remove("inputCorrecto");
 
-//NombrePropietario
-$(() => $("#nomProp").keyup(() => { 
+    if (!/(.*[a-zA-Z0-9]+.*){6,}/.test(valor)) { // 6 caracteres 
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "Tu password debe de tener minimo 6 caracteres";
+        listaErrores.appendChild(divError);
+    }
+
+    if (!/(.*[A-Z]+.*){1,}/.test(valor)){ // 1 mayuscula
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "Tu password debe tener una mayuscula";
+        listaErrores.appendChild(divError);
+    }
+
+    if (!/(.*[\!\?\-\$\_]+.*){1,}/.test(valor)){ // 1 caracter especial
+        esCorrecto = false;
+        let divError = document.createElement("div");
+        divError.innerHTML = "Tu password debe tener un caracter especial";
+        listaErrores.appendChild(divError);
+    }
+
+    if (esCorrecto){
+        inputPass.classList.add("inputCorrecto");
+    }else{
+        inputPass.classList.add("inputErroneo");
+    }
+
+    return esCorrecto;
+}
+
+function validarNomProp(){
     let esCorrecto = true;
     let inputNomProp = document.getElementById("nomProp");
     let valor = inputNomProp.value.trim();
@@ -147,11 +179,10 @@ $(() => $("#nomProp").keyup(() => {
     }
 
     return esCorrecto;
-}));
+}
 
+function validarNumT(){
 
-//NombrePropietario
-$(() => $("#numT").keyup(() => { 
     let esCorrecto = true;
     let inputNumT = document.getElementById("numT");
     let valor = inputNumT.value.trim();
@@ -181,11 +212,10 @@ $(() => $("#numT").keyup(() => {
     }
 
     return esCorrecto;
-}));
+    
+}
 
-
-//CVV
-$(() => $("#cvv").keyup(() => { 
+function validarCvv(){
     let esCorrecto = true;
     let inputCvv = document.getElementById("cvv");
     let valor = inputCvv.value.trim();
@@ -215,37 +245,29 @@ $(() => $("#cvv").keyup(() => {
     }
 
     return esCorrecto;
-}));
+}
 
 
-//Formulario
-$(() => $("#formulario").click(() => { 
-    levent.preventDefault();
 
-    let esFormularioCorrecto = false;
-    let esCorrectoNombre = $("#nombre");
-    let esCorrectoEmail = $("#email");
-    let esCorrectoPass = $("#pass");
-    let esCorrectoNomProp = $("#nomProp");
-    let esCorrectoNumT = $("#numT");
-    let esCorrectoCvv = $("#cvv");
-    //let esCorrectoFechaV = $("#fechaV");
-    
 
-    
-    if (esCorrectoNombre &&  esCorrectoEmail && esCorrectoPass 
-        && esCorrectoNomProp && esCorrectoNumT && esCorrectoCvv 
-        && $("#fechaV").text().includes("")
-        ) {
-        esFormularioCorrecto = true;
+function validarFormulario(){
+    let esCorrectoNombre = validarNombre();
+    let esCorrectoEmail = validarEmail();
+    let esCorrectoPass = validarPass();
+    let esCorrectoNomProp = validarNomProp();
+    let esCorrectoNumT = validarNumT();
+    let esCorrectoCvv = validarCvv();
+    let esCorrectoDuracion = validarDuracion();
 
-        alert("Reservado con exito!");
-        console.log(listaUsuarios);
-  
-    } else {
-        alert("ERROR! Complete bien sus datos");
+    if(esCorrectoDuracion||esCorrectoNombre||esCorrectoEmail||esCorrectoPass||esCorrectoNomProp
+        ||esCorrectoNumT||esCorrectoCvv){
+
+        alert("Reserva relizada correctamente!")
+        
+        let form = document.getElementById("formulario");
+
+        form.submit();
+    }else{
+        alert("Tienes fallos en el metodo de pago!");
     }
-    
-
-}));
-
+}
