@@ -12,18 +12,19 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
 
     let result = "";
 
-    for (let i = 0; i < frases.length; i++) {
-        let min = frases[i].toLocaleLowerCase();
+    for (let j = 0; j < frases.length; j++) {
+        let valor = frases[j].toLocaleLowerCase();
 
-        if (min.includes(trozoPalabra.toLocaleLowerCase(), 
-            trozoPalabra.length) === true && min.includes(trozoPalabra.toLocaleLowerCase(), 
-            frases[i].length - trozoPalabra.length) === false) {
+        if (valor.includes(trozoPalabra.toLocaleLowerCase(), 
+            trozoPalabra.length) === true &&
+            valor.includes(trozoPalabra.toLocaleLowerCase(), 
+            frases[j].length - trozoPalabra.length) === false) {
 
-            if (min.endsWith(trozoPalabra.toLocaleLowerCase()) || 
-            min.startsWith(trozoPalabra.toLocaleLowerCase())) {
+            if (valor.startsWith(trozoPalabra.toLocaleLowerCase()) || 
+            valor.endsWith(trozoPalabra.toLocaleLowerCase())) {
 
             } else {
-                result += frases[i] + " ";
+                result +=  " " + frases[j];
             }
 
         }
@@ -40,17 +41,20 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
 function sumaDePosiciones(frase, trozoPalabra) {
     
     let frases = frase.split(" ");
-    let suma = 0;
     let result = 0;
+    let sumar = 1;
 
-    for (let i = 0; frases.length > i; i++) {
-        if (frases[i].includes(trozoPalabra)) {
-            suma = frase.indexOf(trozoPalabra, suma + 1);
-            if (suma === -1) {
-                suma = 0;
+    for (let j = 0; frases.length > j; j++) {
+        
+        if (frases[j].includes(trozoPalabra)) {
+            sumar = frase.indexOf(trozoPalabra, sumar+1);
+
+            if (sumar === 1) {
+                sumar = 0;
             }
-            result = result + suma;
 
+            result = result + sumar;
+            
         }
     }
     return result;
@@ -63,18 +67,20 @@ function sumaDePosiciones(frase, trozoPalabra) {
 //     #123ABC o #123abc
 //     #BBB    o #333     
 function esValidoFormatoRGB(color) {
-    colores = color.toLocaleLowerCase();
+
+    rgb = color.toLocaleLowerCase();
     let result = false;
-    let cadena = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-                "a", "b", "c", "d", "e", "f",];
+    let lista = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9",
+                "a", "b", "c", "d", "e", "f"];
     let cont = 0;
+
     if (color.startsWith("#")) {
 
         for (let j = 1; color.length > j; j++) {
-            let comparar = colores.charAt(j);
-            for (let i = 0; cadena.length > i; i++) {
+            let comparar = rgb.charAt(j);
+            for (let j = 0; lista.length > j; j++) {
                 
-                if (comparar.includes(cadena[i]) === true) {
+                if (comparar.includes(lista[j]) === true) {
                     cont++;
                 }
             }
@@ -83,9 +89,7 @@ function esValidoFormatoRGB(color) {
     if (cont === color.length - 1) {
         result = true;
     }
-    if (colores.endsWith("#")) {
-        result = false;
-    }
+    
     return result;
 }
 
@@ -98,21 +102,23 @@ function esValidoFormatoRGB(color) {
 //Por ejemplo: http://www.prueba.es?ejemplo=1 =>no valido
 //Por ejemplo: http://www.prueba.es => No valido
 //Por ejemplo: https://www.prueba?hola=1&holita=2&holar=3 =>No valido
+
 function esValidaURL(url) {
+
     result = false;
+    lista = url.split(" ");
 
-    urlArray = url.split(".");
-    if (urlArray.length > 2) {
+    if (lista.includes == " ") {
 
-        if (url.startsWith("http://www.") || url.startsWith("https://www.")) {
-            if (urlArray[2].startsWith("com") || urlArray[2].startsWith("es")) {
+        if (url.startsWith("http://www.") 
+            || url.startsWith("https://www.") 
+            || lista[j].startsWith("com") 
+            || lista[j].startsWith("es")) {
 
-                if (urlArray[2].includes("&") === true) {
-
+                if (lista[j].includes("&") === true) {
                     result = true;
-
                 }
-            }
+            
         }
     }
     return result;
