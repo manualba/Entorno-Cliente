@@ -7,53 +7,68 @@
 
 function quienEsMayor(a, b) {
 
-    if (a > b) {
-        return 1;
-    } else if (a == b) {
-        return 0;
-    } else {
+    if (a < b) { //b mayor
         return -1;
+
+    } else if (a == b) { //iguales
+        return 0;
+
+    } else { //a mayor
+        return 1;
     }
 }
 
 //Dado un array de elementos, devuelve la suma de todos aquellos que los elementos sean pares
 function sumarElementosPares(elemetos) {
-    let num = 0;
-    for (x = 0; x < elemetos.length; x++) {
-        if (elemetos[x] % 2 === 0) {
-            num = num + elemetos[x];
+
+    let sumaNumP = 0;
+
+    for (i = 0; i < elemetos.length; i++) {
+
+        if ((elemetos[i] % 2) === 0) {
+            sumaNumP = sumaNumP + elemetos[i];
         }
     }
-    return num;
+    return sumaNumP;
 }
 
 //Dado un array de elementos devuelve el valor mas grande de todos ellos.
 function escogerValorMasGrande(elemetos) {
-    let num_mayor = elemetos[0];
-    for (x = 0; x < elemetos.length; x++) {
-        if (elemetos[x] > num_mayor) {
-            num_mayor = elemetos[x];
+
+    let numGrande = elemetos[0];
+
+    for (i = 0; i < elemetos.length; i++) {
+
+        if (elemetos[i] > numGrande) {
+            numGrande = elemetos[i];
         }
     }
-    return num_mayor;
+    return numGrande;
 }
 
 //Dada una palabra cualquier, devuelve la palabra alreves, por ejemplo: "HOLA" => "ALOH"
-function invertirUnaPalabra(String) {
-    let invertida = "";
-    for (x = 0; x <= String.length; x++) {
-        invertida = invertida + String.charAt(String.length - x)
+function invertirUnaPalabra(string) {
+
+    let invertirPalabra = "";
+
+    for (i = 0; i <= string.length; i++) {
+
+        invertirPalabra = invertirPalabra + string.charAt(string.length - i)
     }
-    return invertida;
+
+    return invertirPalabra;
 }
 
 //Dada un array, cuenta el numero de elementos impares que contiene
-function contarElementosImpares(String) {
-    let num = 0;
-    for (x = 0; x < String.length; x++) {
-        if (String[x] % 2 !== 0) {
-            num++;
+function contarElementosImpares(string) {
+
+    let numImpar = 0;
+
+    for (i = 0; i < string.length; i++) {
+
+        if (string[i] % 2 !== 0) {
+            numImpar++;
         }
     }
-    return num;
+    return numImpar;
 }

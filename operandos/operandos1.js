@@ -17,7 +17,8 @@ function asignacionDeValoresRestar(){
 
     let x = 0;
     let y = 0;
-    x -=-5;
+
+    x -= -5;
 
     return x === 5;
 }
@@ -26,7 +27,9 @@ function asignacionDeValoresMultiplicacion(){
 
     let x = 5;
     let y = 0;
-    x *=7;
+
+    x *= 7;
+
     return x === 35;
 }
 
@@ -34,7 +37,9 @@ function asignacionDeValoresResto(){
 
     let x = 3;
     let y = 0;
-    x%=2;
+
+    x %= 2;
+
     return x === 1;
 }
 
@@ -42,7 +47,9 @@ function comparacionIgualdad(){
 
     let x = undefined;
     let y = null;
-    let resultado = x==y;
+
+    let resultado = x === y;
+    
     return resultado;
 }
 
@@ -50,7 +57,9 @@ function comparacionIgualdadEstricto(){
 
     let x = undefined;
     let y = undefined;
-    let resultado = x===y;
+
+    let resultado = x == y;
+
     return resultado;
 }
 
@@ -58,7 +67,9 @@ function compararcionMayorIgual(){
 
     let x = 0;
     let y = 0;
-    let resultado = x>=y;
+
+    let resultado = x >= y;
+    
     return resultado;
 }
 
@@ -66,7 +77,9 @@ function compararcionMayorIgual(){
 function incremento(){
 
     let x = 4;
+
     x++;
+
     return x === 5;
 }
 
@@ -74,7 +87,9 @@ function incremento(){
 function decremento(){
 
     let x = 6;
+
     x--;
+
     return x === 5;
 }
 
@@ -87,9 +102,11 @@ function igualdadIncremento(){
 }
 
 function comparacionAND(){
-    var x = "coche";
-    var y = "coche";
-    if(y && x ==="coche"){
+
+    var x = "manolo";
+    var y = "manolo";
+
+    if(y && x === "manolo"){
          resultado = true;
     }
 
@@ -97,17 +114,17 @@ function comparacionAND(){
 }
 
 function comparacionOR(){
-    var x = "perro";
-    var y = "gato";
-    if(y || x ==="perro"){
+    var x = "manolo";
+    var y = "alba";
+    if(y || x === "manolo"){
         resultado = true;
    }
     return resultado;
 }
 
 function comparacionNOT(){
-    var x = "perro";
-    if(x !== "gato"){
+    var x = "manolo";
+    if(x !== "alba"){
         resultado=true;
     }
 
