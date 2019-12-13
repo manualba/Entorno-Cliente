@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>Contraseña olvidada</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="olvidoPass.js" cache="false"></script>
+</head>
+<body>
+    <a href="../Login/index.html">Volver</a>
+    <h1 style="text-align: center;">Contraseña olvidada</h1>
+    <hr>
+    <div class="cuadroEjercicios">
+    <h2 style="text-decoration: underline silver;">Introduce tu e-mail para enviar los datos:
+    </h2>
+    <div>
+        
+        <form id="formulario">
+            
+            <div>
+                <label for="gmail">Email: </label>
+                <input id="gmail"/>
+                <div id="erroresGmail" class="error"> </div>
+            </div>
+            <br>
+            <div>
+            
+                <div>
+                    <label for="pass">Contraseña: </label>
+                    <input id="pass" type="password" > 
+                    <div id="erroresPass" class="error"> </div>
+                </div>
+                <br>
+                <div>
+                    <label for="repass">Re-contraseña: </label>
+                    <input id="repass" type="password" > 
+                    <div id="erroresRePass" class="error"> </div>
+                </div>
+                <br>
+
+                <div>
+                        <label for="pregunta">Pregunta de seguridad: </label>
+                        <select id="pregunta">
+                            <option value="">--Selecciona una pregunta--</option>
+                            <option value="a">¿Como se llama tu perro?</option>
+                            <option value="b">¿Que numero es tu favorito?</option>
+                            <option value="c">¿Como conociste a tu mejor amigo?</option>
+                            <option value="d">¿Cual es tu asignatura favorita?</option>
+                        </select>
+                        <div id="erroresPregunta" class="error">
+                            
+                        </div>
+                    </div>
+                    <br>
+                <div>
+                    <label for="nombre">Respuesta: </label>
+                    <input id="nombre"/>
+                    <div id="erroresNombre" class="error"></div>
+                </div>
+                    <br>
+                    <div>
+                        <label for="robot"></label>
+                        <input type="checkbox" id="robot" name="robot" value="true"> 
+                        No soy un robot
+                        <div id="erroresRobot" class="error"></div>
+                    </div>
+                   
+                    <br>
+                    <hr>
+
+                    <input type="submit" value="Enviar" id="formulario">
+        </form>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
