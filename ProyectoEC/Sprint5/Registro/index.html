@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario para Registro de Usuarios</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <script src="formulario.js"></script>
+</head>
+
+<body>
+    <h1>FORMULARIO DE REGISTRO</h1>
+    <br>
+    <a href="file:///C:/Users/Manu%20alba/Desktop/dwec-master/Tema4/--Proyecto1erTrimestre--/Sprint4/Login/index.html">Volver</a>
+    <hr>
+    <form id="registro">
+        <ul>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" size="20" />
+            <div id="erroresNombre" class="error">
+
+            </div>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" />
+            <div id="erroresApellidos" class="error">
+
+            </div>
+
+            <label>Edad:</label>
+            <input type="text" id="edad" />
+            <div id="erroresEdad" class="error">
+
+            </div>
+
+            <label for="profesion">Profesi&oacute;n:</label>
+                <select id="profesion">
+                    <option value="ninguna">Ninguna</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="limpiador">Limpiador</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="recepcionista">Recepcionista</option>
+                    
+                </select>
+            <div id="erroresProfesion" class="error"></div>
+
+            
+
+            <label>¿Acepta los Términos y Condiciones?:</label>
+            <input type="checkbox" id="terminos" />
+            <div id="erroresTerminos" class="error">
+
+            </div>
+        </ul>
+        <input type="submit" name="submit" value="Registrar"/>
+    </form>
+
+    <div id="usuarioCreado">
+        
+        <div id="nombre"></div>
+        <div id="apellidos"></div>
+        <div id="edad"></div>
+        <div id="profesion"></div>
+    </div>
+</body>
+
+</html>
