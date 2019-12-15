@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../--Proyecto1erTrimestre--/CSS/estilo.css">
+    <script src="../--Proyecto1erTrimestre--/Funciones/formularioLogin.js" cache="false"></script>
+</head>
+<body style="text-align: center;">
+    <h1>LOGIN</h1>
+    <header style="text-align: left;">
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="registro.html">Registro</a>
+            <a href="pago.html">Pago</a>
+            <a href="indexBusqueda.html">Busqueda</a>
+            <a href="indexUsuario.html">Usuario</a>
+            <a href="indexGestion.html">Gestion</a>
+            <a href="indexEdicion.html">Edicion</a>
+        </nav>
+    </header>
+   
+    <hr>
+    <div class="cuadroEjercicios">
+    <h2 style="text-decoration: underline silver;">Usuario:</h2>
+    <div>
+        
+
+            <form id="formulario">
+            <div>
+                <label for="nombre">Nombre: </label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error"></div>
+            </div>
+            <br>
+            <div>
+                <label for="gmail">Email: </label>
+                <input id="gmail"/>
+                <div id="erroresGmail" class="error"> </div>
+            </div>
+            <br>
+            <div>
+            
+                <div>
+                    <label for="pass">Contraseña: </label>
+                    <input id="pass" type="password" > 
+                    <div id="erroresPass" class="error"> </div>
+                </div>
+                <div>
+                   
+                    <br>
+                
+                <a href="loginOlvido.html">¿Contraseña olvidada?</a>
+                 
+                    <hr>
+
+
+                    <input type="submit" value="Enviar" id="formulario">
+               
+        </form>
+        <br>
+                <a class="inactivo" href="indexBusqueda.html" id="ver">Entrar</a>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

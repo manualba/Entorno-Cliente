@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Panel de Edición </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../--Proyecto1erTrimestre--/CSS/estiloEdicion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="../funciones/utilidadesP.js" cache="false"></script>
+</head>
+
+<body>
+
+    <h1>Pagina de Edición</h1>
+
+    <header style="text-align: left;">
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="registro.html">Registro</a>
+            <a href="pago.html">Pago</a>
+            <a href="indexBusqueda.html">Busqueda</a>
+            <a href="indexUsuario.html">Usuario</a>
+            <a href="indexGestion.html">Gestion</a>
+            <a href="indexEdicion.html">Edicion</a>
+        </nav>
+    </header>
+    <hr>
+
+    
+    <main id="edicionForms">
+        <section class="form">
+            <form action="" id="FormularioCrearPelicula">
+                <fieldset>
+                    <legend>Añadir Vuelo</legend>
+                    <div class="addForm">
+                        <label for="titulo">Nombre</label>
+                        <input type="text" name="nombreCompañia" id="nombreCompañia" class="inputForm"
+                            placeholder="Nombre de la compañía">
+                        <div id="erroresNombre" class="error"></div>
+
+                        <label for="nombre">Nombre del usuario</label>
+                        <input type="text" name="nombre" id="nombre" class="inputForm" placeholder="Nombre del usuario">
+
+                        <label for="apellido">Apellido del Usuario</label>
+                        <input type="text" name="apellido" id="apellido" class="inputForm"
+                            placeholder="Apellido del usuario">
+
+                        <label for="trayecto">Trayecto</label>
+                        <select id="trayecto" name="trayecto">
+                            <option value="">-Seleccionar-</option>
+                            <option value="Madrid - Lisboa">Madrid - Lisboa</option>
+                            <option value="Málaga - Helsinki">Málaga - Helsinki</option>
+                            <option value="Sevilla - Barcelona">Sevilla - Barcelona</option>
+                            <option value="Sevilla - Luxemburgo">Sevilla - Luxemburgo</option>
+                        </select>
+
+                        <!--<label for="pasajeros">Número de pasajeros</label>
+                        <input type="number" name="pasajeros" id="pasajeros" class="inputForm" placeholder="Número de pasajeros">-->
+
+                        <button type="button" class="añadirCompañia" id="añadirCompañia">Añadir Compañía</button>
+
+                        <div class="errores" id="erroresCompañiaNueva">
+
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+
+        <section>
+            <h1>VUELOS</h1>
+            <div id="mostrarCompañias">
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../--Proyecto1erTrimestre--/Funciones/utilidadesEd.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/edicion.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/clasesEdicion.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/objetosEdicion.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/utilidadesEd2.js" cache="false" defer></script>
+
+    <footer>
+        <section>
+            <button id="botonMostrarOcultar" onclick="mostrarOcultar()">Mostrar Vídeos</button>
+
+            <div id="videos">
+                <iframe width="350" height="256" src="https://www.youtube.com/embed/aQss3cAtBt8"
+                    alt="video vueling"></iframe>
+                <iframe width="350" height="256" src="https://www.youtube.com/embed/lT2XSoRYiQ4"
+                    alt="video ryanair"></iframe>
+                <iframe width="350" height="256" src="https://www.youtube.com/embed/OyTWhGvDIs0"
+                    alt="video iberia"></iframe>
+                <iframe width="350" height="256" src="https://www.youtube.com/embed/pRMGvP6jY8I"
+                    alt="video lufthansa"></iframe>
+            </div>
+
+
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>EJEMPLO DE VOTOS</title>
+    <script src="../--Proyecto1erTrimestre--/Funciones/objetosUsuario.js" cache="false"></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/usuariosUsuario.js" cache="false"></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/mostrar.js" cache="false"></script>
+</head>
+<body>
+    
+<div>
+    <h1 style="text-align: center;">VOTACIONES DE COMPAÑIAS</h1>
+    <header>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="registro.html">Registro</a>
+            <a href="pago.html">Pago</a>
+            <a href="indexBusqueda.html">Busqueda</a>
+            <a href="indexUsuario.html">Usuario</a>
+            <a href="indexGestion.html">Gestion</a>
+            <a href="indexEdicion.html">Edicion</a>
+        </nav>
+    </header>
+    <div>
+        <hr>
+    <h2>Usuario:</h2>
+        <select id="selectUsuario" >
+            <option value=""></option>
+        </select>
+    </div>
+    <div>
+        <h3>Compañias votadas de: <span id="nombre_usuario"></span></h3>
+        <ul id="companias_votados" >
+            
+        </ul>
+    </div>
+</div>
+<br>
+<hr>
+<div>
+    <h2>Votaciones</h2>
+    <form id="formularioVotar">
+    <div>
+        <span>Selecciona usuario: </span>    
+        <select id="selectUsuarioVotar" >
+            <option value=""></option>
+        </select>
+    </div>
+    <br>
+        <span>Compañia a votar:</span>
+        <select id="selectCompaniaVotar" >
+            <option value=""></option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <span>¿Te gusta esta compañia?</span><br>
+        <input id="gusta" type="radio" name="puntuacion" value="1" />
+        <label>Si</label>
+        <input id="no_gusta" type="radio" name="puntuacion" value="0" />
+        <label>No</label>
+    </div>
+    <br>
+    <div>
+        <label for="observaciones">Comentarios</label>
+        <textarea id="observaciones" name="observaciones">
+
+        </textarea>
+    </div>
+    <input type="submit" value="votar">
+    <hr>
+    <div>
+        <h3>Top 3 agencias más votadas</h3>
+        <button onclick="return mostrarOcultar('ocultable')" type="button">Mostrar/Ocultar</button>
+        <div id="ocultable">
+            <ol>
+                <li>Traveling Explore's</li>
+                <li>Vueling</li>
+                <li>Sixt</li>
+            </ol>
+        </div>
+
+        </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+#peliculasMostrar{
+    width:100;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.vuelo{
+    width:250px;
+    height:250px;
+    border:3px solid green;
+}
+
+.incorrecto{
+    background-color:rgba(255, 44, 44, 0.6);;
+}
+
+.correcto{
+    background-color:rgba(48, 191, 44, 0.6);
+}
+
+.error{
+    color:red;
+}
+
+.divInput{
+    width: 25%;
+    margin-bottom: 20px;
+    border: solid green 1px;
+}
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.changeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.eliminarPeliFavorita{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+
+main[id = "edicionForms"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+main[id = "usuarioForms"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 5px;
+}
+
+main[id = "gestionForm"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 5px;
+}
+
+
+button[id = "botonEjecutarPruebas"]{
+    border: solid black 1px;
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(240, 0, 0, 1);
+}
+
+
+.añadirPelicula{
+    width: 50%;
+}
+
+.vuelo{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form{
+    width: 25%;
+}
+
+#FormularioCambiarDirector{
+    height: 100%;
+}
+
+#cambiarDirectorForm{
+    width: 100%;
+}
+
+textarea[id="inputComentario"]{
+    resize: none;
+}
+
+i{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+button{
+    width: 45%;
+}
+
+
+.filtrar{
+    display: flex;
+    flex-direction: column;
+}
+
+.OrdenarPor{
+    display: flex;
+    flex-direction: column;
+}

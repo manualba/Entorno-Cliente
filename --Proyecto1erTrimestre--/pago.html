@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>pagos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="../--Proyecto1erTrimestre--/CSS/estilo.css">
+    <script src="../--Proyecto1erTrimestre--/Funciones/pago.js" cache="false"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">MÉTODO DE PAGO</h1>
+    <header>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="registro.html">Registro</a>
+            <a href="pago.html">Pago</a>
+            <a href="indexBusqueda.html">Busqueda</a>
+            <a href="indexUsuario.html">Usuario</a>
+            <a href="indexGestion.html">Gestion</a>
+            <a href="indexEdicion.html">Edicion</a>
+        </nav>
+    </header>
+    <br>
+    <hr>
+    <div class="formulario">
+    <h2 style="text-decoration: underline silver;">Usuario:</h2>
+    <div>
+        
+
+            <form id="formulario">
+            <div>
+                <label for="nombre">Nombre usuario: </label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error"></div>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email: </label>
+                <input id="email"/>
+                <div id="erroresEmail" class="error"> </div>
+            </div>
+            <br>
+            <div>
+            
+                <div>
+                    <label for="pass">Contraseña: </label>
+                    <input id="pass" type="password" > 
+                    <div id="erroresPass" class="error"> </div>
+                </div>
+                <div>
+                   
+                    <br>
+                    <hr>
+                    <h2 style="text-decoration: underline silver;">Datos bancarios:</h2>
+
+                    <div>
+                        <label for="nomProp">Nombre propietario de la tarjeta: </label>
+                        <input id="nomProp"/>
+                        <div id="erroresNomProp" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="numT">Número de tarjeta: </label>
+                        <input id="numT"/>
+                        <div id="erroresNumT" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label for="cvv">CVV: </label>
+                        <input id="cvv"  size="3" />
+                        <div id="erroresCvv" class="error"></div>
+                    </div>
+                        <br>
+                    <div>
+                        <label type="month" for="fechaV">Fecha vencimiento:</label>
+                        <input id="fechaV" type="month"/>
+                        <div id="erroresFechaV" class="error"></div>
+                    </div>
+                 
+                    <hr>
+
+
+                    <input type="submit" value="Enviar" id="formulario">
+               
+        </form>
+        
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

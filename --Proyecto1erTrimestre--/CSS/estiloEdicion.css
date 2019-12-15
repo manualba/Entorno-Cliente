@@ -1,0 +1,129 @@
+#mostrarCompañias{
+    width:100;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.compañia{
+    width:250px;
+    height:250px;
+    border:1px solid black;
+}
+
+.incorrecto{
+    background-color:rgba(255, 44, 44, 0.6);;
+}
+
+.correcto{
+    background-color:rgba(48, 191, 44, 0.6);
+}
+
+.error{
+    color:red;
+}
+
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+          font-family: 'titles', Fallback, sans-serif;
+      font-size: 100%;
+      font-weight: normal;
+      letter-spacing: 1px;
+  }
+
+div#videos{
+
+    display: none;
+}
+
+.divInput{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-bottom: 20px;
+    border: solid black 1px;
+}
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.changeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.eliminarPeliFavorita{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 75%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+
+main[id = "edicionForms"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+main[id = "usuarioForms"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 5px;
+}
+
+main[id = "gestionForm"]{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 5px;
+}
+
+.añadirCompañia{
+    width: 50%;
+}
+
+.compañia{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form{
+    width: 25%;
+}
+
+textarea[id="inputComentario"]{
+    resize: none;
+}
+
+i{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+button{
+    width: 45%;
+}

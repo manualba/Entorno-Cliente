@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vuelos </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../--Proyecto1erTrimestre--/CSS/estiloGestion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+</head>
+<body>
+    <script language="javascript">        
+       
+       </script>
+        
+    <h1>Pagina de Gestion</h1>
+    <header>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="registro.html">Registro</a>
+            <a href="pago.html">Pago</a>
+            <a href="indexBusqueda.html">Busqueda</a>
+            <a href="indexUsuario.html">Usuario</a>
+            <a href="indexGestion.html">Gestion</a>
+            <a href="indexEdicion.html">Edicion</a>
+        </nav>
+    </header>
+    <br>
+    <canvas id="canvas" width="100" height="100">
+    </canvas>
+    <hr>
+    <main id="gestionForm">
+        <section class="form">
+            <fieldset>
+                <legend>Funcion Más Votado y Requisitos</legend>
+                <div class="vueloVotado">
+                        <label for="longitudTitulo">Longitud Minima del Titulo</label>
+                        <input type="number" id="longitudTitulo" name="longitudTitulo">
+                    <button type="button" class="botonPelisMasVotadas" id="botonPelisMasVotadas">BUSCAR</button>
+                </div>
+
+                <div class="errores" id="erroresPelisMasVotadas">
+
+
+                </div>
+            </fieldset>
+        </section>
+
+
+
+
+        <section class="form">
+                <fieldset>
+                    <legend>Funcion Filtrar por Compañia</legend>
+                    <div class="MejorVuelo">
+                        <select id="compañia" name="compañia">
+                            <option value="">-Seleccionar-</option>
+                            <option value="Vueling">Vueling</option>
+                            <option value="Lufthansa">Lufthansa</option>
+                            <option value="AirFrance">AirFrance</option>
+                            <option value="Sundair">Sundair</option>
+
+                        </select>
+                        <button type="button" class="botonPeliMasVotada" id="botonPeliMasVotada">BUSCAR</button>
+                    </div>
+    
+                    <div class="errores" id="erroresPeliMasVotada">
+    
+    
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="form">
+                    <fieldset>
+                        <legend>Funcion Ordenar por Compañia</legend>
+                        <div class="OrdenarPor">
+                            <label for="orden">Ordenar Por</label>
+                            <select id="orden" name="orden">
+                                <option value="">-Seleccionar-</option>
+                                <option value="Vueling">Vueling</option>
+                                <option value="AirFrance">AirFrance</option>
+                                <option value="director">Tiempo</option>
+                                <option value="productora">TipoVuelo</option>
+                                <option value="likes">Likes</option>
+                                <option value="dislikes">Dislikes</option>
+                            </select>
+                            <button type="button" class="botonOrdenarPor" id="botonOrdenarPor">BUSCAR</button>
+                        </div>
+        
+                        <div class="errores" id="erroresOrdenarPor">
+        
+        
+                        </div>
+                    </fieldset>
+                </section>
+        <section>
+            <h1>Vuelos</h1>
+            <div id="peliculasMostrar">
+                    
+            </div>
+        </section>
+    </main>
+    
+    
+    <script src="../--Proyecto1erTrimestre--/Funciones/utilidades.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/gestion.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/clases.js" cache="false" defer></script>
+    <script src="../--Proyecto1erTrimestre--/Funciones/objetos.js" cache="false" defer></script>
+</body >
+</html>
