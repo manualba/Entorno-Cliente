@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ejemplo Ajax</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/funcionesAjax.js" defer></script>
+    <script src="js/pruebas.js" defer></script>
+</head>
+<body>
+<div id="spinner" class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+</div>
+
+<!--DATOS-->
+<div>
+    <h1>Datos de BDD</h1>
+    <div>
+        <button onclick="funcionAjaxAsincronaJSON();" >Obtener datos</button>
+    </div>
+    <div>
+        <div id="resultadoAsincronoJSON"></div>
+    </div>
+</div>
+
+<!--BUSCAR POR NOMBRE-->
+<div>
+    <form id="formulario" action="">
+    <div>
+        <h2>BUSCAR</h2>
+        <label>Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+    </div>
+    <input type="submit" id="boton" value="Enviar"/>
+    </form>
+</div>
+<div id="respuesta"></div>
+
+<!--BUSCAR POR SELECT-->
+<div>
+    <form id="formularioSelect" action="">
+    <div>
+        <h2>SELECT</h2>
+        <select name="select" id="habitacion" name="habitacion">
+            <option value="x">--Selecciona--</option> 
+            <option value="Individual">Individual</option>
+            <option value="Doble">Doble</option>
+            <option value="Triple">Triple</option>
+            <option value="Suite">Suite</option>
+            <option value="Suite-Premium">Suite-Premium</option>
+          </select>
+    </div>
+    <input type="submit" id="boton2" value="Mostrar Habitaciones"/>
+    </form>
+</div>
+    <div id="selectRespuesta"></div>
+
+<!--INSERTAR-->
+    <div>
+        <form id="formularioInsertar" action="">
+        <div>
+            <h2>INSERTAR</h2>
+            <label>Nombre:</label>
+            <input type="text" id="nombre2" name="nombre2">
+            <label>DNI:</label>
+            <input type="text" id="dni" name="dni">
+            <label>Fecha:</label>
+            <input type="text" id="fecha" name="fecha">
+            <label>Tipo Habitacion:</label>
+            <input type="text" id="tipo_habitacion" name="tipo_habitacion">
+
+        </div>
+        <input type="submit" id="boton3" value="Enviar"/>
+        </form>
+    </div>
+    <div id="respuestaInsertar"></div>
+ 
+</body>
+</html>
