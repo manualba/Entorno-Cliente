@@ -1,0 +1,125 @@
+<!-- 
+    Ejercicios Tema5.
+Hacer los siguientes ejemplos mediante peticiones Ajax con XMLHttpRequest, pero obteniendo los datos de una base de datos y que corresponda con el tema del proyecto del 1ºTrimestre:
+
+* Obtener Datos en formato XML con una petición síncrona por GET
+* Obtener Datos en formato JSON con una petición asíncrona POST
+* Obtener Datos realizando búsquedas por AJAX con los siguientes tipos de inputs:
+
+	* Text
+	* Select
+	* Checkbox
+	* Textarea
+	
+* Cuando no haya elementos que mostrar en la búsqueda debe aparecer un mensaje indicando que no hay ninguno.
+
+* Crear un registro en la BBDD mediante una petición AJAX.
+
+Debe controlarse que si hay errores en la petición: debe mostrarse una alerta al usuario, indicando que hay problemas en el proceso, que vuelva a intentarlo más tarde.
+
+Debe mostrarse siempre el símbolo de carga de la petición, y se oculte cuando ya se hayan mostrado los datos o se haya producido un error.
+
+No utilizar alerts ni sleep para este ejercicio. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ejemplo Ajax</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/funcionesAjax.js" defer></script>
+    <script src="js/pruebas.js" defer></script>
+</head>
+<body>
+<div id="spinner" class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+</div>
+
+<!--DATOS-->
+<div>
+    <h1>Datos de BDD</h1>
+    <div>
+        <button onclick="funcionAjaxAsincronaJSON();" >Obtener datos</button>
+    </div>
+    <div>
+        <div id="resultadoAsincronoJSON"></div>
+    </div>
+</div>
+
+<!--BUSCAR POR TEXT-->
+<div>
+    <form id="formulario" action="">
+    <div>
+        <h2>TEXT:</h2>
+        <label>Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+    </div>
+    <input type="submit" id="boton3" value="Enviar"/>
+    </form>
+</div>
+<div id="respuesta"></div>
+
+
+<!--BUSCAR POR CHECKBOX-->
+<div>
+    <form id="formularioC" action="">
+    <div>
+        <h2>CHECKBOX:</h2>
+        <input type="checkbox" id="check" name="check">
+        <label>Selecciona para ver los usuarios que usan Suite o Suite-Premium</label>
+    </div>
+    <input type="submit" id="boton" value="Enviar"/>
+    </form>
+</div>
+<div id="respuestaC"></div>
+
+<!--BUSCAR POR SELECT-->
+<div>
+    <form id="formularioSelect" action="">
+    <div>
+        <h2>SELECT</h2>
+        <select name="select" id="habitacion" name="habitacion">
+            <option value="x">--Selecciona--</option> 
+            <option value="Individual">Individual</option>
+            <option value="Doble">Doble</option>
+            <option value="Triple">Triple</option>
+            <option value="Suite">Suite</option>
+            <option value="Suite-Premium">Suite-Premium</option>
+          </select>
+    </div>
+    <input type="submit" id="boton2" value="Mostrar Habitaciones"/>
+    </form>
+</div>
+    <div id="selectRespuesta"></div>
+
+    <!--BUSCAR POR TEXTAREA-->
+<div>
+    <form id="formularioTA" action="">
+    <div>
+        <h2>TEXTAREA:</h2>
+        <textarea rows="5" cols="15" id="tarea"> </textarea>
+    </div>
+    <input type="submit" id="boton5" value="Enviar"/>
+    </form>
+</div>
+<div id="respuestaTA"></div>
+
+<!--INSERTAR-->
+
+<div>
+        <form id="formularioInsertar" action="">
+        <div>
+            <h2>INSERTAR</h2>
+            <label>Nombre:</label>
+            <input type="text" id="nombre2" name="nombre2">
+           
+        </div>
+        <input type="submit" id="boton4" value="Enviar"/>
+        </form>
+    </div>
+    <div id="respuestaInsertar"></div>
+ 
+</body>
+</html>
