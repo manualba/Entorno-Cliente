@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Buscar pilotos</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/funcionesJquery.js" defer></script>
+</head>
+<body>
+<div id="spinner" class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+</div>
+
+
+<div>
+    <h1>Pilotos con Jquery</h1>
+    <form id="formularioVer" action="">
+   
+    <input type="submit" id="botonVer" value="OBTENER DATOS" />
+    </form>
+</div>
+<div id="resultadoV">
+
+</div>
+
+
+<div>
+    <h3>BUSCAR POR NOMBRE</h3>
+    <form id="formularioBusqueda" action="">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" value="" name="nombre" id="nombre" />
+    </div>    
+    <input type="submit" id="botonBusqueda" value="Enviar" />
+    </form>
+</div>
+
+<div id="resultado"></div>
+
+
+<div>
+    <h3>INSERTAR NOMBRE</h3>
+    <form id="formularioInsertar" action="">
+    <div>
+        <label for="nombreIn">Nombre</label>
+        <input type="text" value="" name="nombreIn" id="nombreIn" />
+    </div>    
+    <input type="submit" id="botonIn" value="Enviar" />
+    </form>
+</div>
+
+<div id="resultadoI"></div>
+
+</body>
+</html>
