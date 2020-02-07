@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+# Ejercicios Tema5.
+
+Hacer los siguientes ejemplos mediante peticiones Ajax con FETCH, pero obteniendo los datos de una base de datos y que corresponda con el tema del proyecto del 1ºTrimestre:
+
+	* Rellenar las opciones de un select dependiendo del valor seleccionado en otro select, por una petición asíncrona al servidor, cada vez que se cambie el valor de este último select. 
+ 
+	* Hacer un formulario para actualizar un registro en la base de datos por AJAX y validarlo en servidor de forma asíncrona antes de insertarlo.
+
+	* En un paǵina mostrar un listado de elementos, con un botón de eliminar al lado de cada uno, y cada vez que se pulse, debe eliminarse dicho elemento en base de datos y eliminarse de la página.
+
+Debe controlarse que si hay errores en la petición: debe mostrarse una alerta al usuario, indicando que hay problemas en el proceso, que vuelva a intentarlo más tarde.
+
+Debe mostrarse siempre el símbolo de carga de la petición, y se oculte cuando ya se hayan mostrado los datos o se haya producido un error.
+
+No utilizar alerts ni sleep para este ejercicio.
+-->
+<html>
+<head lang="en">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Ejemplo Ajax</title>
+    <!--<link rel="stylesheet" href="css/css.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/funcionesFetch.js" defer></script>
+</head>
+<body>
+<div id="spinner" class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+</div>
+<div>
+    <form id="formularioMYSQL" action="">
+   
+    <input type="submit" id="botonMYSQL" value="OBTENER DATOS MYSQL" />
+    </form>
+</div>
+<div>
+    <form id="formularioPDO" action="">
+   
+    <input type="submit" id="botonPDO" value="OBTENER DATOS PDO" />
+    </form>
+</div>
+<div>
+    <h1>FORMULARIO DE BUSQUEDA</h1>
+    <form id="formularioBusqueda2" action="">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" value="" name="nombre" id="nombre" />
+    </div>    
+    <input type="submit" id="botonBusqueda" value="OBTENER DATOS POR BUSQUEDA" />
+    </form>
+</div>
+<div id="resultado">
+
+</div>
+<div>
+    <h1>FORMULARIO PARA CREAR CAMPO</h1>
+    <form id="formularioBusqueda" action="">
+    <div>
+        <label for="selectCampo">Nombre</label>
+        <select id="selectCampo" name="selectCampo">
+            <option value="">--Selecciona--</option>
+            <option value="input">INPUT</option>
+            <option value="checkbox">CHECKBOX</option>
+            <option value="select">SELECT</option>
+        </select>
+        <div id="campoFormulario">
+            EL CONTENIDO DE ESTE DIV SE CREARÁ POR FETCH
+        </div>
+        <div>
+            <label for="selectPrueba">EL CONTENIDO DE ESTE SELECT SE CARGA POR FETCH</label>
+            <select id="selectPrueba">
+            </select>
+        </div>
+    </div>    
+    </form>
+</div>
+
+</body>
+</html> 
