@@ -140,3 +140,59 @@ function gestionarErrores(response){
     }
     return response;
 }
+
+//INSERT
+document.addEventListener("DOMContentLoaded",function(){
+    let formularioAjax = document.getElementById("formularioInsertar");
+    formularioAjax.addEventListener("submit",function(event){
+        event.preventDefault();
+        realizarPeticionAsincrona3();
+    });
+})
+
+function objetoXHR(){
+    if (window.XMLHttpRequest){
+        return new XMLHttpRequest();
+    }else if (window.ActiveXObject){ 
+
+        var versionesIE = new Array('MsXML2.XMLHTTP.5.0', 'MsXML2.XMLHTTP.4.0',
+            'MsXML2.XMLHTTP.3.0', 'MsXML2.XMLHTTP', 'Microsoft.XMLHTTP');
+        for (var i = 0; i < versionesIE.length; i++){
+            try{
+            
+                return new ActiveXObject(versionesIE[i]);
+            } catch (errorControlado) {}
+        }
+    }
+   
+    throw new Error("No se pudo crear el objeto XMLHTTPRequest");
+}
+
+
+
+function comprobarEstadoPeticion3(){
+    switch(this.readyState){
+        case 4:
+            if (this.status == 200){
+                alert("Se ha insertado con exito! Compruebalo en los datos!");
+
+                tratarResultadoInsertar(this.responseText);
+            }else{
+            }
+            break;
+    }
+}
+
+function realizarPeticionAsincrona3(){
+    let provincias = document.getElementById("provincias").value;
+
+    miXHR = new objetoXHR();
+    miXHR.open("POST", "servidor/insertarDatos.php", true);
+    miXHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    miXHR.onreadystatechange = comprobarEstadoPeticion3;
+    
+    let datos = "provincias="+provincias; 
+
+    miXHR.send(datos);
+
+}
