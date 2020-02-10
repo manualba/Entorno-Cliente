@@ -8,10 +8,12 @@ switch($_POST["tipoPrueba"]){
  
   $mysqli = new mysqli('localhost', 'root', '', 'spain');
 
-  $query = $mysqli -> query ("SELECT * FROM provincias");
+  $query = $mysqli -> query ("SELECT * FROM espania");
                     
-    while ($texto = mysqli_fetch_array($query)) {
-        
+    while ($fila = mysqli_fetch_array($query)) {
+        $texto .="<select id='prueba' name='prueba'>";
+        $texto .='<option value="1">'.$fila['provincias'].'</option>'; 
+        $texto .="</select>";
                             
 }
         break;
@@ -19,15 +21,18 @@ switch($_POST["tipoPrueba"]){
     case "2":
         $mysqli = new mysqli('localhost', 'root', '', 'spain');
 
-  $query = $mysqli -> query ("SELECT * FROM c_autonomas");
-                    
-    while ($texto = mysqli_fetch_array($query)) {
-                            
+  $query = $mysqli -> query ("SELECT * FROM espania");
+    while ($fila = mysqli_fetch_array($query)) {
+        $texto .="<select id='prueba' name='prueba'>";
+        $texto .='<option value="2">'.$fila['c_aut'].'</option>'; 
+        $texto .="</select>";  
+              
 }
         break;
     default:
-        $texto .="<option value=''></option>";
+        $texto .="<option value=''>--Selecciona--</option>";
         break;
 }
+
 echo json_encode($texto);
 ?>
