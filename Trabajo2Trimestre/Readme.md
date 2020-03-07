@@ -1,5 +1,5 @@
 * <u>**Manuel Alba Hornillo**</u>:
-  - Validación mediante AJAX (Formulario Login)
+  - Validación mediante AJAX (Formulario Login(Usuario y contraseña:admin))
   - Funciones para añadir mediante XHR y Fetch
   - Funciones para editar mediante JQuery y Fetch
   - Funciones para eliminar mediante JQuery y Fetch
